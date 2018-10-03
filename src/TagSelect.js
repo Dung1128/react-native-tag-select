@@ -97,6 +97,11 @@ class TagSelect extends React.Component {
     if (found) {
       delete value[key]
     } else {
+      
+      for(var i in value) {
+        delete value[i]
+      }
+      
       // User is adding but has reached the max number permitted
       if (this.props.max && this.totalSelected >= this.props.max) {
         if (this.props.onMaxError) {
